@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Bootstrap -->
+    <link href="style/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="<%= @settings['location'] %>/style/style.css" rel="stylesheet" type="text/css" />
+    <title><%= @settings['title'] %> - <%= @settings['description'] %></title>
+</head>
+<body>
+    
+    <div class='navbar navbar-inverse navbar-fixed-top'>
+    <div class='navbar-inner'>
+    <div class='container'>
+        <a class='brand' href='<%= @settings['location']%>index.html'><%= @settings['title'] %> - <small><%= @settings['description'] %></small></a>
+
+        <div class='btn-group pull-right'>
+            <a class='btn btn-danger' href='http://curtis.lassam.net' title='My blog'><i class='icon-home icon-white'></i> Curtis Lassam</a>
+            <a class='btn btn-warning' href='rss.xml' title='RSS feed'><i class='icon-th-list icon-white'></i> RSS</a>
+            <a class='btn btn-success' href='https://github.com/classam/' title='Github'><i class='icon-barcode icon-white'></i> Github</a>
+            <a class='btn btn-info' href='https://twitter.com/classam/' title='Twitter'><i class='icon-bullhorn icon-white'></i> Twitter</a>
+            <a class='btn btn-primary' href='http://www.rdio.com/people/classam/' title='Rdio'><i class='icon-music icon-white'></i> Rdio</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class='under_navbar'> </div>
+
+<div class='container'>
+    
+
+<!-- Header --> 
+<div id='header'>
+
+    
+
+</div>
+
+<div class='row-fluid'>
+    <div class='span12 hero-unit'>
+        <h1>Comic:</h1>
+        <h2><a href='<%= posts.first.link %>'><%= posts.first.title %></a> <small><%= posts.first.created.strftime("%B %d, %Y"); %></small></h2>
+    </div>
+</div>
+
+<div class='row-fluid'>
+    <h2> Archive: </h2>
+
+    <div class='span4'>
+    <% for category, posts in categories %> 
+    <% if category == "Comics" %>
+    <h2 id='comics' class='category_header'>Comics</h2>
+        <ul class='category'>
+        <% for post in posts %> 
+            <li> 
+                <a href='<%= post.link %>'><%= post.title %></a> 
+            </li> 
+        <% end %>
+        </ul>
+    <% end %>
+    <% end %>
+    </div>
+
+    <% for category, posts in categories %> 
+    <% if category == "Video" %>
+    <div class='span6'>
+    <h2 id='<%=category.downcase.gsub(' ', '_') %>' class='category_header'><%= category %></h2>
+        <ul class='category'>
+        <% for post in posts %> 
+            <li> 
+                <a href='<%= post.link %>'><%= post.title %></a> 
+            </li> 
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+    <% end %>
+    
+    <% for category, posts in categories %> 
+    <% if category == "Tech" %>
+    <div class='span6'>
+    <h2 id='<%=category.downcase.gsub(' ', '_') %>' class='category_header'>Learning!</h2>
+        <ul class='category'>
+        <% for post in posts %> 
+            <li> 
+                <a href='<%= post.link %>'><%= post.title %></a> 
+            </li> 
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+    <% end %>
+
+</div>
+
+
+
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="style/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
