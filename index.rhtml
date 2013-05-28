@@ -5,6 +5,8 @@
     <!-- Bootstrap -->
     <link href="style/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="<%= @settings['location'] %>/style/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/gif" href="http://cube-drone.com/favicon.gif">
+    
     <title><%= @settings['title'] %> - <%= @settings['description'] %></title>
     <!-- Google Analytics Tracking -->
     <script>
@@ -36,18 +38,11 @@
     <div class='under_navbar'> </div>
 
 <div class='container'>
-    
-
-<!-- Header --> 
-<div id='header'>
-
-    
-
-</div>
 
 <div class='row-fluid'>
     <div class='span12 hero-unit'>
-        <h1>Comic:</h1>
+        <img class='pull-left' style='margin-right: 15px' src='http://curtis.lassam.net/comics/cube_drone/logo.gif' alt='logo'></img>
+        <h1>Latest Comic:</h1>
         <h2><a href='<%= posts.first.link %>'><%= posts.first.title %></a> <small><%= posts.first.created.strftime("%B %d, %Y"); %></small></h2>
     </div>
 </div>
