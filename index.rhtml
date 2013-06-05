@@ -50,7 +50,7 @@
 <div class='row-fluid'>
     <h2> Archive: </h2>
 
-    <div class='span4'>
+    <div class='span6'>
     <% for category, posts in categories %> 
     <% if category == "Comics" %>
     <h2 id='comics' class='category_header'>Comics</h2>
@@ -67,7 +67,7 @@
 
     <% for category, posts in categories %> 
     <% if category == "Video" %>
-    <div class='span6'>
+    <div class='span4'>
     <h2 id='<%=category.downcase.gsub(' ', '_') %>' class='category_header'><%= category %></h2>
         <ul class='category'>
         <% for post in posts %> 
@@ -82,7 +82,7 @@
     
     <% for category, posts in categories %> 
     <% if category == "Tech" %>
-    <div class='span6'>
+    <div class='span4'>
     <h2 id='<%=category.downcase.gsub(' ', '_') %>' class='category_header'>Learning!</h2>
         <ul class='category'>
         <% for post in posts %> 

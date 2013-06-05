@@ -1,5 +1,11 @@
 
 #header, nav { text-align: center; }
-
 .under_navbar { height: 60px; } 
+
+article{ margin-bottom: 20px; }
+h2{ margin-bottom: 2px; }
+.date{ margin: 2px 0 10px 0; }
+.comic{ text-align: center; }
+
+
 
