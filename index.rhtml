@@ -8,6 +8,15 @@
     <link rel="icon" type="image/gif" href="http://cube-drone.com/favicon.gif">
     
     <title><%= @settings['title'] %> - <%= @settings['description'] %></title>
+    <!-- Google Analytics Tracking -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-41279849-1', 'cube-drone.com');
+        ga('send', 'pageview');
+    </script>
 </head>
 <body>
     
@@ -41,7 +50,7 @@
 <div class='row-fluid'>
     <h2> Archive: </h2>
 
-    <div class='span4'>
+    <div class='span6'>
     <% for category, posts in categories %> 
     <% if category == "Comics" %>
     <h2 id='comics' class='category_header'>Comics</h2>
@@ -58,7 +67,7 @@
 
     <% for category, posts in categories %> 
     <% if category == "Video" %>
-    <div class='span6'>
+    <div class='span4'>
     <h2 id='<%=category.downcase.gsub(' ', '_') %>' class='category_header'><%= category %></h2>
         <ul class='category'>
         <% for post in posts %> 
@@ -73,7 +82,7 @@
     
     <% for category, posts in categories %> 
     <% if category == "Tech" %>
-    <div class='span6'>
+    <div class='span4'>
     <h2 id='<%=category.downcase.gsub(' ', '_') %>' class='category_header'>Learning!</h2>
         <ul class='category'>
         <% for post in posts %> 
