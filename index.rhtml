@@ -35,7 +35,21 @@
     </div>
     </div>
     </div>
-    <div class='under_navbar'> </div>
+    
+    <div class='navbar navbar-fixed-top second-navbar'>
+    <div class='navbar-inner' style='text-align:center;'>
+    <div class='container'>
+        <div class='btn-group'>
+            <a class='btn' href='<%= @settings['location']%><%= posts.last.link %>' title='first'><i class='icon-backward'></i> First</a>
+            <a class='btn' href='<%= @settings['location']%><%= posts.first.link %>' title='previous'><i class='icon-chevron-left'></i> Previous</a>
+            <a class='btn disabled' href='#'><i class='icon-home'></i> Home</a>
+            <a class='btn disabled' href='#'><i class='icon-chevron-right'></i> Next</a>
+            <a class='btn disabled' href='#' title='last'><i class='icon-forward'></i> Last</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class='under-navbar'> </div>
 
 <div class='container'>
 
