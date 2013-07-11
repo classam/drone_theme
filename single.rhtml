@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <link href="../style/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="<%= @settings['location'] %>/style/style.css" rel="stylesheet" type="text/css" />
+    <link href="../style/style.css" rel="stylesheet" type="text/css" />
     <title><%= @settings['title'] %> - <%= current_post.title %></title>
     <!-- Google Analytics Tracking -->
     <script>
@@ -24,20 +24,44 @@
         <a class='brand' href='<%= @settings['location']%>index.html'><%= @settings['title'] %> - <small><%= @settings['description'] %></small></a>
 
         <div class='btn-group pull-right'>
-            <a class='btn' href='<%= @settings['location']%><%= posts.last.link %>' title='first'><i class='icon-backward'></i> First</a>
+            <a class='btn btn-danger' href='http://curtis.lassam.net' title='My blog'><i class='icon-user icon-white'></i> Curtis Lassam</a>
+            <a class='btn btn-warning' href='../rss.xml' title='RSS feed'><i class='icon-th-list icon-white'></i> RSS</a>
+            <a class='btn btn-info' href='https://twitter.com/Cube_Drone' title='Twitter'><i class='icon-bullhorn icon-white'></i> Twitter</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class='navbar navbar-fixed-top second-navbar'>
+    <div class='navbar-inner' style='text-align:center;'>
+    <div class='container'>
+        <div class='btn-group'>
+            <% unless previous_post == nil %>
+                <a class='btn' href='<%= @settings['location']%><%= posts.last.link %>' title='first'><i class='icon-backward'></i> First</a>
+            <% else %>
+                <a class='btn disabled' href='<%= @settings['location']%><%= posts.last.link %>' title='first'><i class='icon-backward'></i> First</a>
+            <% end %>
             <% unless previous_post == nil %>
                 <a class='btn' href='<%= @settings['location']%><%= previous_post.link %>' title='previous'><i class='icon-chevron-left'></i> Previous</a>
+            <% else %>
+                <a class='btn disabled' href='#'><i class='icon-chevron-left'></i> Previous</a>
             <% end %>
+            <a class='btn' href='<%= @settings['location']%>index.html'><i class='icon-home'></i> Home</a>
             <% unless next_post == nil %>
                 <a class='btn' href='<%= @settings['location']%><%= next_post.link %>' title='next'><i class='icon-chevron-right'></i> Next</a>
+            <% else %>
+                <a class='btn disabled' href='#'><i class='icon-chevron-right'></i> Next</a>
             <% end %>
-            <a class='btn' href='<%= @settings['location']%><%= posts.first.link %>' title='last'><i class='icon-forward'></i> Last</a>
+            <% unless next_post == nil %>
+                <a class='btn' href='<%= @settings['location']%><%= posts.first.link %>' title='last'><i class='icon-forward'></i> Last</a>
+            <% else %>
+                <a class='btn disabled' href='<%= @settings['location']%><%= posts.first.link %>' title='last'><i class='icon-forward'></i> Last</a>
+            <% end %>
         </div>
     </div>
     </div>
     </div>
     
-    <div class='under_navbar'> </div>
+    <div class='under-navbar'> </div>
 
     <article>
     <h2><%= current_post.title %></h2>

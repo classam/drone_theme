@@ -26,16 +26,28 @@
         <a class='brand' href='<%= @settings['location']%>index.html'><%= @settings['title'] %> - <small><%= @settings['description'] %></small></a>
 
         <div class='btn-group pull-right'>
-            <a class='btn btn-danger' href='http://curtis.lassam.net' title='My blog'><i class='icon-home icon-white'></i> Curtis Lassam</a>
+            <a class='btn btn-danger' href='http://curtis.lassam.net' title='My blog'><i class='icon-user icon-white'></i> Curtis Lassam</a>
             <a class='btn btn-warning' href='rss.xml' title='RSS feed'><i class='icon-th-list icon-white'></i> RSS</a>
-            <a class='btn btn-success' href='https://github.com/classam/' title='Github'><i class='icon-barcode icon-white'></i> Github</a>
-            <a class='btn btn-info' href='https://twitter.com/classam/' title='Twitter'><i class='icon-bullhorn icon-white'></i> Twitter</a>
-            <a class='btn btn-primary' href='http://www.rdio.com/people/classam/' title='Rdio'><i class='icon-music icon-white'></i> Rdio</a>
+            <a class='btn btn-info' href='https://twitter.com/Cube_Drone' title='Twitter'><i class='icon-bullhorn icon-white'></i> Twitter</a>
         </div>
     </div>
     </div>
     </div>
-    <div class='under_navbar'> </div>
+    
+    <div class='navbar navbar-fixed-top second-navbar'>
+    <div class='navbar-inner' style='text-align:center;'>
+    <div class='container'>
+        <div class='btn-group'>
+            <a class='btn' href='<%= @settings['location']%><%= posts.last.link %>' title='first'><i class='icon-backward'></i> First</a>
+            <a class='btn' href='<%= @settings['location']%><%= posts.first.link %>' title='previous'><i class='icon-chevron-left'></i> Previous</a>
+            <a class='btn disabled' href='#'><i class='icon-home'></i> Home</a>
+            <a class='btn disabled' href='#'><i class='icon-chevron-right'></i> Next</a>
+            <a class='btn disabled' href='#' title='last'><i class='icon-forward'></i> Last</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class='under-navbar'> </div>
 
 <div class='container'>
 

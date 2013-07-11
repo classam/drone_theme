@@ -1,11 +1,15 @@
 
+/* words! */
+small { font-size: 80%; }
 #header, nav { text-align: center; }
-.under_navbar { height: 60px; } 
+
+.second-navbar { margin-top: 40px; }
+.under-navbar { height: 100px; } 
 
 article{ margin-bottom: 20px; }
-h2{ margin-bottom: 2px; }
-.date{ margin: 2px 0 10px 0; }
-.comic{ text-align: center; }
+article h2{ margin-bottom: 2px; text-align: center; }
+article .date{ margin: 2px 0 10px 0; text-align: center; }
+.content{ text-align: center; }
 
 /* stolen IRC theme from my other page */
 #irc
